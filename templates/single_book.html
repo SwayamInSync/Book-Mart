@@ -30,9 +30,12 @@
 						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
 					</ul>
 
+					{% if message != "": %}
+
 					<div class="alert alert-success" role="alert">
-  This is a success alert—check it out!
-</div>
+						{{ message }}
+					</div>
+					{% endif %}
 				</div>
 				<div class="image phone"><div class="inner"><img src="{{ book['volumeInfo']['imageLinks']['thumbnail'] }}" alt="" /></div></div>
 			</header>
