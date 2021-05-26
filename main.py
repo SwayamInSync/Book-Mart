@@ -138,9 +138,12 @@ def logout():
 @app.route("/show-book/<id>")
 def show_single_book(id):
     get_book = [book for book in books if book['id'] == id]
-    book = Cart.query.filter_by(buyer=current_user.email, is_purchased=False, product_id=id).first()
-    if book:
-        message = "Added to cart"
+    if current_user.is_authenticated:
+        book = Cart.query.filter_by(buyer=current_user.email, is_purchased=False, product_id=id).first()
+        if book:
+            message = "Added to cart"
+        else:
+            message = ""
     else:
         message = ""
     return render_template('single_book.html', year=datetime.now().year, book=get_book[0],
