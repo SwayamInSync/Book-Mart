@@ -211,12 +211,11 @@ def create_checkout_session():
             'quantity': 1,
         }],
         mode='payment',
-        success_url=url_for('success'),
-        cancel_url=url_for('failed')
+        success_url=f"{url_for('success')}",
+        cancel_url=f"{url_for('failed')}"
 
     )
     response = jsonify({'id': session.id})
-    response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
 
