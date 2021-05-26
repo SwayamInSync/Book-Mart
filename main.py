@@ -49,6 +49,8 @@ class User(UserMixin, db.Model):
     state = db.Column(db.String, nullable=False)
     country = db.Column(db.String, nullable=False)
 
+db.create_all()
+
 
 class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
