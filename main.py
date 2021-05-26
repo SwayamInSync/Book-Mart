@@ -211,8 +211,8 @@ def create_checkout_session():
             'quantity': 1,
         }],
         mode='payment',
-        success_url=f"{url_for('success')}",
-        cancel_url=f"{url_for('failed')}"
+        success_url="/success",
+        cancel_url="/failed"
 
     )
     response = jsonify({'id': session.id})
