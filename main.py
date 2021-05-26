@@ -231,7 +231,7 @@ def success():
     message = f"Subject: PAYMENT SUCCESSFUL \n\n Summary:\n Items: {cart_list} \n Total price: {payable_amount} \n Status: Payment successful \n Have a good day and keep reading"
     with SMTP('smtp.gmail.com') as connection:
         connection.starttls()
-        connection.login(f'{os.environ.get("EMAIL")}', f'{os.environ.get("EMAIL_PASS")}')
+        connection.login(f'cleopetra306@gmail.com', f'123@swayam.com')
         connection.sendmail(from_addr=f'{os.environ.get("EMAIL")}', to_addrs=f'{current_user.email}', msg=f'{message}')
     return render_template('success.html', authenticated=current_user.is_authenticated)
 
