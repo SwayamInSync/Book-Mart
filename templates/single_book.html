@@ -26,7 +26,7 @@
 					<p>Published Date: {{ book['volumeInfo']['publishedDate'] }} </p>
 					<ul class="actions">
 						<li><a href="{{ url_for('add_to_cart', id=book['id']) }}" class="button primary">Add to cart</a></li>
-						<li><a href="#" class="button primary">&#8377; {{ book['saleInfo']['retailPrice']['amount'] }}</a></li>
+						<li><a href="#" class="button primary">&#36; {{ book['saleInfo']['retailPrice']['amount'] }}</a></li>
 						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
 					</ul>
 

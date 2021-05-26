@@ -185,7 +185,7 @@ def show_cart():
     all_items = Cart.query.filter_by(buyer=current_user.email, is_purchased=False).all()
     for item in all_items:
         total_price += item.price
-    payable_amount = total_price + (0.05 * total_price) - 10
+    payable_amount = total_price + (0.05 * total_price) - 1
     payable_amount = int(payable_amount)
     cart_list = ', '.join([item.title for item in all_items])
     return render_template('cart.html', cart=all_items, total_price=total_price, payable_amount=payable_amount,
