@@ -98,7 +98,6 @@ def register():
                     name=request.form.get('name'),
                     email=request.form.get('email'),
                     password=hash_pass,
-                    phone_number=request.form.get('phone_number'),
                     address=request.form.get('address'),
                     city=request.form.get('city'),
                     pincode=request.form.get('pincode'),
