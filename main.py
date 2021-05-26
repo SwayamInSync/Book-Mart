@@ -211,8 +211,8 @@ def create_checkout_session():
             'quantity': 1,
         }],
         mode='payment',
-        success_url="/success",
-        cancel_url="/failed"
+        success_url="https://book--mart.herokuapp.com/success",
+        cancel_url="https://book--mart.herokuapp.com/failed"
 
     )
     response = jsonify({'id': session.id})
