@@ -139,7 +139,7 @@ def logout():
 def show_single_book(id):
     get_book = [book for book in books if book['id'] == id]
     return render_template('single_book.html', year=datetime.now().year, book=get_book[0],
-                           authenticated=current_user.is_authenticated)
+                           authenticated=current_user.is_authenticated, message="")
 
 
 @app.route("/add-to-cart/<id>")
@@ -159,7 +159,7 @@ def add_to_cart(id):
     )
     db.session.add(new_cart_item)
     db.session.commit()
-    return redirect(url_for('show_single_book', id=id))
+    return redirect(url_for('show_single_book', id=id, message="Added to cart"))
 
 
 @app.route("/dashboard")

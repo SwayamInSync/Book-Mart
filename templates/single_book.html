@@ -4,6 +4,7 @@
 		<title>Book Mart</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="single_book/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="single_book/assets/css/noscript.css" /></noscript>
 	</head>
@@ -28,6 +29,10 @@
 						<li><a href="#" class="button primary">&#8377; {{ book['saleInfo']['retailPrice']['amount'] }}</a></li>
 						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
 					</ul>
+
+					<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
 				</div>
 				<div class="image phone"><div class="inner"><img src="{{ book['volumeInfo']['imageLinks']['thumbnail'] }}" alt="" /></div></div>
 			</header>
