@@ -222,28 +222,20 @@ def create_checkout_session():
 @app.route("/success")
 @login_required
 def success():
+    global cart_list
     non_purchased_items = Cart.query.filter_by(buyer=current_user.email, is_purchased=False).all()
     for item in non_purchased_items:
         id = item.id
         book = Cart.query.get(int(id))
         book.is_purchased = True
         db.session.commit()
-    message = f"Subject: PAYMENT SUCCESSFUL \n\n Summary:\n Items: {cart_list} \n Total price: {payable_amount} \n Status: Payment successful \n Have a good day and keep reading"
-    with SMTP('smtp.gmail.com') as connection:
-        connection.starttls()
-        connection.login(f'cleopetra306@gmail.com', f'123@swayam.com')
-        connection.sendmail(from_addr=f'{os.environ.get("EMAIL")}', to_addrs=f'{current_user.email}', msg=f'{message}')
+    cart_list = ""
     return render_template('success.html', authenticated=current_user.is_authenticated)
 
 
 @app.route("/failed")
 @login_required
 def failed():
-    message = f"Subject: PAYMENT Failed \n\n Summary:\n Items: {cart_list} \n Total price: {payable_amount} \n Status: Payment Failed \n Please try again"
-    with SMTP('smtp.gmail.com') as connection:
-        connection.starttls()
-        connection.login(f'{os.environ.get("EMAIL")}', f'{os.environ.get("EMAIL_PASS")}')
-        connection.sendmail(from_addr=f'{os.environ.get("EMAIL")}', to_addrs=f'{current_user.email}', msg=f'{message}')
     return render_template('cancel.html', authenticated=current_user.is_authenticated)
 
 
