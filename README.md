@@ -6,6 +6,12 @@ People can search for their favourite books, add them into their cart and can ma
 
 book-mart uses **google book api** for searching and showing different kinds of books and their respective data.  
 
+## Demo
+
+https://github.com/SwayamInSync/Book-Mart/assets/74960567/99a29f6b-d8a0-4ad9-9d0c-a3ee90eb848c
+
+
+
 ## Technology used:
 
 - Flask
